@@ -1,16 +1,16 @@
-const express = require('express')
-const { join } = require('path')
+const express = require('express');
+const db = require('./config/connection');
+const routes = require('./routes');
 
-const app = express()
+const PORT = process.env.PORT || 3001;
+const app = express();
 
-app.use(express.static(join(__dirname, 'public')))
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(routes);
 
-app.use(require('./routes'))
-
-require('./db')
-    .then(() => app.listen(3001))
-    .catch(err => console.log(err))
-
-
+db.once('open', () => {
+  app.listen(PORT, () => {
+    console.log(`API server running on port ${PORT}!`);
+  });
+});

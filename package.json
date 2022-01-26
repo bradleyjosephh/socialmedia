@@ -11,18 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.2",
-    "mongoose": "^6.1.6"
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bradleyjosephh/socialmedia.git"
-  },
-  "bugs": {
-    "url": "https://github.com/bradleyjosephh/socialmedia/issues"
-  },
-  "homepage": "https://github.com/bradleyjosephh/socialmedia#readme"
+  }
 }
